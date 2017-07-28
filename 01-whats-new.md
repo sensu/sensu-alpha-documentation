@@ -1,0 +1,1 @@
+# What's new in Sensu 2.0?
