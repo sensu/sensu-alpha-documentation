@@ -3,7 +3,7 @@ Sensu 2.0 Alpha Documentation and Examples
 
 ## Overview
 
-Sensu 2.0 is distributed as 3
+Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org).
 
 ### sensu-backend
 
