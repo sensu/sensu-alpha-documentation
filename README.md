@@ -13,7 +13,7 @@ Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org).
 
 ## More Documentation
 
-1. [What's New?](01-whats-new.md) - What's new in Sensu 2.0?
+1. [What's different?](01-whats-new.md) - What's different in Sensu 2.0?
 2. [Installation](02-installation.md) - Installing and Configuring Sensu 2.0
 3. [CLI](03-sensuctl.md) An overview of the Sensu CLI utility - sensuctl
 4. [RBAC](04-rbac-multitenancy.md) - An overview of Sensu RBAC and Multitenancy
