@@ -1,1 +1,132 @@
 # Sensu CLI (sensuctl)
+
+## Installation
+
+### macOS
+
+Download the latest release.
+
+```sh
+curl -LO https://storage.googleapis.com/sensu-release/$(curl -s https://storage.googleapis.com/sensu-release/latest.txt)/darwin/amd64/sensuctl
+```
+**Optionally**, if you would like to download a specific release, replace
+`{VERSION}` in the command below.
+
+```sh
+curl -LO https://storage.googleapis.com/sensu-release/{VERSION}/darwin/amd64/sensuctl
+```
+
+Make the sensuctl binary executable.
+
+```sh
+chmod +x sensuctl
+```
+
+Move the executable into your PATH.
+
+```
+sudo mv sensuctl /usr/local/bin/
+```
+
+### Debian / Ubuntu
+
+Add and update repository.
+
+```sh
+# curl -s https://packagecloud.io/install/repositories/sensu-test/sensu/script.deb.sh.deb | sudo bash
+```
+
+Install package from Sensu repository.
+
+```sh
+sudo apt-get update
+sudo apt-get install sensuctl
+```
+
+### Redhat
+
+Add Sensu repository.
+
+```sh
+curl -s https://packagecloud.io/install/repositories/sensu-test/sensu/script.deb.sh.deb | sudo bash
+```
+
+Install package from Sensu repository.
+
+```sh
+sudo yum check-update
+sudo yum install sensu-cli
+```
+
+## Configure
+
+Sensuctl must be configured before it can connect to your Sensu cluster.
+
+Run the `configure` command to get started.
+
+```sh
+sensuctl configure
+```
+
+<img alt="sensu-configure-demo" src="assets/sensuctl-configure.gif" width="650px" />
+
+## Shell Auto-Completion
+
+### Installation (Bash Shell)
+
+Make sure bash completion is installed. If you use a current Linux
+in a non-minimal installation, bash completion should be available.
+On a Mac, install with:
+
+```sh
+brew install bash-completion
+```
+
+Then add the following to your `~/.bash_profile`:
+
+```bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+```
+
+When bash-completion is available we can add the following to your `~/.bash_profile`:
+
+```bash
+source <(sensuctl completion bash)
+```
+
+You can now source your `~/.bash_profile` or launch a new terminal to utilize completion.
+
+```sh
+source ~/.bash_profile
+```
+
+### Installation (ZSH)
+
+Add the following to your `~/.zshrc`:
+
+```bash
+source <(sensuctl completion zsh)
+```
+
+You can now source your `~/.zshrc` or launch a new terminal to utilize completion.
+
+```sh
+source ~/.zshrc
+```
+
+### Usage
+
+sensuctl:
+> $ sensuctl <kbd>Tab</kbd>
+```
+check       configure   event       user
+asset       completion  entity      handler
+```
+
+sensuctl:
+> $ sensuctl check <kbd>Tab</kbd>
+```
+create  delete  import  list
+```
