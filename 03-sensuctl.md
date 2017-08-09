@@ -77,6 +77,49 @@ sensuctl config set-organization default
 sensuctl config set-environment prod
 ```
 
+## Getting Help
+
+All Sensu sub-commands have a `--help` flag that returns more information on
+using the command and if applicable any sub-commands _it_ has.
+
+sensuctl:
+> $ sensuctl --help
+```shell
+sensuctl controls Sensu instances
+
+Usage:    sensuctl COMMAND
+
+Options:
+      --api-url string        host URL of Sensu installation
+      --cache-dir string      path to directory containing cache &
+                              temporary files (default
+                              "/Users/jamesdphillips/Library/Caches/sensu/sensuctl")
+      --config-dir string     path to directory containing
+                              configuration files (default
+                              "/Users/jamesdphillips/.config/sensu/sensuctl")
+  -h, --help                  help for sensuctl
+      --organization string   organization in which we perform actions
+                              (default "default")
+
+Commands:
+  completion   Output shell completion code for the specified shell (bash or zsh)
+  configure    Initialize sensuctl configuration
+  logout       Logout from sensuctl
+  version      Show the sensu-ctl version information
+  
+Management Commands:
+  asset        Manage assets
+  check        Manage checks
+  config       Modify sensuctl configuration
+  entity       Manage entities
+  environment  Manage environments
+  event        Manage events
+  handler      Manage handlers
+  organization Manage organizations
+  role         Manage roles
+  user         Manage users
+```
+
 ## Shell Auto-Completion
 
 ### Installation (Bash Shell)
