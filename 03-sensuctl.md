@@ -91,15 +91,10 @@ Usage:    sensuctl COMMAND
 
 Options:
       --api-url string        host URL of Sensu installation
-      --cache-dir string      path to directory containing cache &
-                              temporary files (default
-                              "/Users/jamesdphillips/Library/Caches/sensu/sensuctl")
-      --config-dir string     path to directory containing
-                              configuration files (default
-                              "/Users/jamesdphillips/.config/sensu/sensuctl")
+      --cache-dir string      path to directory containing cache & temporary files (default "/Users/deanlearner/Library/Caches/sensu/sensuctl")
+      --config-dir string     path to directory containing configuration files (default "/Users/deanlearner/.config/sensu/sensuctl")
   -h, --help                  help for sensuctl
-      --organization string   organization in which we perform actions
-                              (default "default")
+      --organization string   organization in which we perform actions (default "default")
 
 Commands:
   completion   Output shell completion code for the specified shell (bash or zsh)
@@ -119,6 +114,28 @@ Management Commands:
   role         Manage roles
   user         Manage users
 ```
+
+## Import
+
+On top of being able to create new resources interactively and with flags,
+sensuctl provides `import` commands for creating & updating resources via STDIN.
+
+```json
+{
+  "name": "marketing-site",
+  "command": "check-http.rb -u https://dean-learner.book",
+  "subscriptions": ["demo"],
+  "interval": 15,
+  handlers: ["slack"]
+}
+```
+
+```sh
+# cat my-check.json | sensuctl check import
+OK
+```
+
+Further API details- including valid parameters- forthcoming.
 
 ## Shell Auto-Completion
 
