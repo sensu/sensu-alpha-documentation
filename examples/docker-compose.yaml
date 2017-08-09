@@ -1,0 +1,19 @@
+version: '3'
+services:
+  sensu-backend1:
+    image: sensuapp/sensu-go
+    command: "sensu-backend start"
+    hostname: backend
+    restart: always
+    ports:
+      - "2380:2380"
+      - "3000:3000"
+      - "8080:8080"
+      - "8081:8081"
+  sensu-agent1:
+    image: sensuapp/sensu-go
+    command: "sensu-agent start --backendUrl wss://backend:8081 --id agent1"
+    hostname: agent1
+    restart: always
+    links:
+      - sensu-backend:backend
