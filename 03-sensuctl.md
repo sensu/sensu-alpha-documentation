@@ -137,6 +137,37 @@ OK
 
 Further API details- including valid parameters- forthcoming.
 
+## Output
+
+sensuctl can be configured to return JSON instead of the default human-readable
+format.
+
+> sensuctl check info marketing-site --format json
+```json
+{
+  "name": "marketing-site",
+  "interval": 10,
+  "subscriptions": [
+    "web"
+  ],
+  "command": "check-http.rb -u https://dean-learner.book",
+  "handlers": [
+    "slack"
+  ],
+  "runtime_assets": [],
+  "environment": "default",
+  "organization": "default"
+}
+```
+
+If you do not want to explicitly use the format flag with each command, you can
+set the global default.
+
+```sh
+# sensuctl config set-format json
+OK
+```
+
 ## Shell Auto-Completion
 
 ### Installation (Bash Shell)
