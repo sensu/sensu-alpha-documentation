@@ -70,6 +70,13 @@ sensuctl configure
 
 <img alt="sensu-configure-demo" src="assets/sensuctl-configure.gif" width="650px" />
 
+You can change individual values with the `config` sub-command.
+
+```sh
+sensuctl config set-organization default
+sensuctl config set-environment prod
+```
+
 ## Shell Auto-Completion
 
 ### Installation (Bash Shell)
