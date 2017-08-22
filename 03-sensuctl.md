@@ -126,7 +126,9 @@ sensuctl provides `import` commands for creating & updating resources via STDIN.
   "command": "check-http.rb -u https://dean-learner.book",
   "subscriptions": ["demo"],
   "interval": 15,
-  handlers: ["slack"]
+  "handlers": ["slack"],
+  "organization": "default",
+  "environment": "default"
 }
 ```
 
