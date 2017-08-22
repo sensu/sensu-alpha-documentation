@@ -58,25 +58,6 @@ sudo yum check-update
 sudo yum install sensu-cli
 ```
 
-## Configure
-
-Sensuctl must be configured before it can connect to your Sensu cluster.
-
-Run the `configure` command to get started.
-
-```sh
-sensuctl configure
-```
-
-<img alt="sensu-configure-demo" src="assets/sensuctl-configure.gif" width="650px" />
-
-You can change individual values with the `config` sub-command.
-
-```sh
-sensuctl config set-organization default
-sensuctl config set-environment prod
-```
-
 ## Getting Help
 
 All Sensu sub-commands have a `--help` flag that returns more information on
