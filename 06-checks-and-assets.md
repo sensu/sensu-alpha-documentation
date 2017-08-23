@@ -2,6 +2,66 @@
 
 ## Checks
 
+Sensu checks are commands executed by the Sensu agent which monitor a condition
+(e.g. is Nginx running?) or collect measurements (e.g. how much disk space do I
+have left?). Although the Sensu agent will attempt to execute any command
+defined for a check, successful processing of check results requires adherence
+to a simple specification.
+
+### Specification
+
+- Result data is output to STDOUT or STDERR
+    - For standard checks this output is typically a human-readable message
+    - For metrics checks this output contains the measurements gathered by the check
+- Exit status code indicates state
+    - 0 indicates “OK”
+    - 1 indicates “WARNING”
+    - 2 indicates “CRITICAL”
+    - exit status codes other than 0, 1, or 2 indicate an “UNKNOWN” or custom status
+
+### Viewing
+
+To view all the checks that are currently configured for the cluster, enter:
+
+```sh
+sensuctl check list
+```
+
+If you want more details on a check, the `info` subcommand can help you out.
+
+> sensuctl check info my-cool-check
+```sh
+=== marketing-site
+Name:           check-http
+Interval:       10
+Command:        check-http.rb -u https://dean-learner.book
+Subscriptions:  web
+Handlers:       slack
+Runtime Assets: ruby42
+Organization:   default
+Environment:    default
+```
+
+### Management
+
+Checks can be configured both interactively:
+
+<img src="assets/sensuctl-check-create.gif" alt="create asset" width="500px" />
+
+...or by using CLI flags.
+
+```sh
+sensuctl check create check-disk -c "./check-disk.sh" --handlers slack -i 5 --subscriptions unix
+ensuctl check create check-nginx -c "./nginx-status.sh" --handlers pagerduty,slack -i 15 --subscriptions unix,www
+```
+
+To delete an existing check, simply pass the name of the check to the `delete`
+command.
+
+```sh
+sensuctl check delete check-disk
+```
+
 ## Assets
 
 Assets are a way to provide your checks with runtime dependencies they require
