@@ -70,9 +70,9 @@ full runtimes (ruby, python, etc.) Most helpful in environments without a
 configuration management system, where your systems, images, containers, might
 not have everything required to run a execute a check.
 
-At runtime the agent sequentially fetches assets and stores them in it's local
+At runtime the agent sequentially fetches assets and stores them in its local
 cache. On subsequent check executions it checks for the presence of the asset in
-it's cache and ensures that the contents matches it's checksum.
+its cache and ensures that the contents matches its checksum.
 
 ### Asset Structure
 
@@ -129,7 +129,7 @@ eg.
   asset are System.OS=='linux'
 - Next, you create an asset for freebsd named `curl/freebsd`; the filter would
   look like `System.OS=='freebsd'`
-- Finally to associate the assets with a check, you can refer the group by it's
+- Finally to associate the assets with a check, you can refer the group by its
   prefix. Eg. a check named `check-website` with assets `['curl'].`
 
 ### Sensu Query Language
