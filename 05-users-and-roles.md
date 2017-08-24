@@ -5,30 +5,6 @@
 In Sensu users are a resource that represents a person or thing that has access
 to your system.
 
-### Default User
-
-By default, your Sensu installation comes with a single user named `admin`. This
-user has the password `P@ssw0rd!` and it is **strongly** recommended that you
-change it immediately. To do so, you'll first want to authenticate using the
-`sensuctl` tool.
-
-> sensuctl configure
-```sh
-? Sensu Base URL: http://my-sensu-host:8080
-? Username: admin
-? Password:  *********
-? ...
-```
-
-Once authenticated, you can use the `change-password` command.
-
-> sensuctl user change-password
-```sh
-? Current Password:  *********
-? Password:          *********
-? Confirm:           *********
-```
-
 ### View Users
 
 To view all the users, that your account has access to see.

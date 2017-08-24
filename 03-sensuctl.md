@@ -58,6 +58,42 @@ sudo yum check-update
 sudo yum install sensu-cli
 ```
 
+
+## Configure
+
+Sensuctl must be configured before it can connect to your Sensu cluster. Run the
+`configure` command to get started.
+
+```sh
+sensuctl configure
+```
+
+<img alt="sensu-configure-demo" src="assets/sensuctl-configure.gif" width="650px" />
+
+### Default User
+
+By default, your Sensu installation comes with a single user named `admin`. This
+user has the password `P@ssw0rd!` and it is **strongly** recommended that you
+change it immediately. To do so, you'll first want to authenticate using the
+`sensuctl` tool.
+
+> sensuctl configure
+```sh
+? Sensu Base URL: http://my-sensu-host:8080
+? Username: admin
+? Password:  *********
+? ...
+```
+
+Once authenticated, you can use the `change-password` command.
+
+> sensuctl user change-password
+```sh
+? Current Password:  *********
+? Password:          *********
+? Confirm:           *********
+```
+
 ## Getting Help
 
 All Sensu sub-commands have a `--help` flag that returns more information on
