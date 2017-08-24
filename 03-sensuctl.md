@@ -94,6 +94,15 @@ Once authenticated, you can use the `change-password` command.
 ? Confirm:           *********
 ```
 
+### Tweak Values
+
+You can change individual values with the `config` sub-command.
+
+```sh
+sensuctl config set-organization default
+sensuctl config set-environment prod
+```
+
 ## Getting Help
 
 All Sensu sub-commands have a `--help` flag that returns more information on
