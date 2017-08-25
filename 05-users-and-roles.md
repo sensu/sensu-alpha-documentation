@@ -63,7 +63,7 @@ The following permissions are available to use in rules:
 | Permission | Description |
 |---|---|
 | `create` | The **create** permission allows creation of specified resource |
-| `read` | The **read** permission allows to see specified resource |
+| `read` | The **read** permission allows read of specified resource |
 | `update` | The **update** permission allows update of specified resource |
 | `delete` | The **delete** permission allows deletion of specified resource |
 
