@@ -3,13 +3,26 @@ Sensu 2.0 Alpha Documentation and Examples
 
 ## Overview
 
-Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org).
+Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org). It can be
+installed via a binary distribution, packages, or used in Docker containers 
+(see the [installation](02-installation.md) instructions for further details).
+There are three components to Sensu 2.0: the sensu-backend, sensu-agent, and
+sensuctl programs.
 
 ### sensu-backend
 
+The `sensu-backend` program replaces `sensu-server` and `sensu-api`. It will 
+also replace the `sensu-enterprise-dashboard` or `uchiwa` programs in the future. 
+It is responsible for the Sensu 2.0 API and Transport.
+
 ### sensu-agent
 
+The `sensu-agent` program replaces `sensu-client`.
+
 ### sensuctl
+
+The first UI we've implemented for Sensu 2.0 is the CLI `sensuctl`. See the
+[CLI](03-sensuctl.md) section for more information.
 
 ## More Documentation
 
