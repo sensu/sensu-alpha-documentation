@@ -53,6 +53,36 @@ user associated with it full access to the system.
 Further, you can easily create more roles that give as much (or as little) access
 as you see fit.
 
+As a reminder, a role contains a set of rules. Each rule contains a permission
+that applies to a resource type.
+
+### Resource Permissions
+
+The following permissions are available to use in rules:
+
+| Permission | Description |
+|---|---|
+| `create` | The **create** permission allows creation of specified resource |
+| `read` | The **read** permission allows read of specified resource |
+| `update` | The **update** permission allows update of specified resource |
+| `delete` | The **delete** permission allows deletion of specified resource |
+
+### Resource Types
+
+| Type | Description |
+|---|---|
+| `*` | Manage all resources. **NOTE**: The `*` type gives precedence to its rule over other rules within the same rule. If you wish to deny a certain type, you can't use the `*` type and must explicitly allow every type required |
+| `assets` | Manage asset resources within a given organization & environment |
+| `checks` | Manage check resources within a given organization & environment |
+| `entities` | Manage entity resources within a given organization & environment |
+| `environment` | Create and remove environments |
+| `events` | Manage event resources within a given organization & environment |
+| `handlers` | Manage handler resources within a given organization & environment |
+| `mutators` | Manage mutator resources within a given organization & environment |
+| `organizations` | Create and remove organizations |
+| `roles` | Create, remove roles and set rules within |
+| `users` | Manage user resources |
+
 ### Viewing Roles
 
 To view all the roles currently configured in your Sensu installation. Run the
