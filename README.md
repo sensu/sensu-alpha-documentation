@@ -1,18 +1,19 @@
-# sensualpha
-Sensu 2.0 Alpha Documentation and Examples
+# About Sensu Alpha Documentation
+
+Welcome friends :wave:! This repository is intended primarily for Sensu 2.0 Alpha users to guide them through their initial use. This Alpha program is a small, high-touch collaboration with Sensu Inc's engineering team as they produce a Beta ready for wider use. We appreciate everyone's patience in this early stage. For regular updates, [join our Community Slack](http://slack.sensu.io) or [our mailing list](http://sensuapp.us6.list-manage.com/subscribe?u=576e632588&id=2e5efd43d8).
 
 ## Overview
 
 Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org). It can be
-installed via a binary distribution, packages, or used in Docker containers 
+installed via a binary distribution, packages, or used in Docker containers
 (see the [installation](02-installation.md) instructions for further details).
 There are three components to Sensu 2.0: the sensu-backend, sensu-agent, and
 sensuctl programs.
 
 ### sensu-backend
 
-The `sensu-backend` program replaces `sensu-server` and `sensu-api`. It will 
-also replace the `sensu-enterprise-dashboard` or `uchiwa` programs in the future. 
+The `sensu-backend` program replaces `sensu-server` and `sensu-api`. It will
+also replace the `sensu-enterprise-dashboard` or `uchiwa` programs in the future.
 It is responsible for the Sensu 2.0 API and Transport.
 
 ### sensu-agent
