@@ -25,6 +25,8 @@ Install the packages from the Sensu prerelease repository.
 
 ```sh
 sudo apt-get install sensu-backend sensu-agent
+sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
+sudo cp /etc/sensu/agent.yml.example /etc/sensu/agent.yml
 ```
 
 ### RHEL / CentOS
@@ -40,6 +42,28 @@ Install the Sensu backend and agent packages.
 
 ```sh
 sudo yum install sensu-backend sensu-agent
+sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
+sudo cp /etc/sensu/agent.yml.example /etc/sensu/agent.yml
+```
+
+## Linux - Starting the services
+
+#### Ubuntu 14.04 / CentOS 6 / RHEL 6
+
+Start the services using the sysvinit scripts.
+
+```sh
+sudo /etc/init.d/sensu-backend start
+sudo /etc/init.d/sensu-agent start
+```
+
+#### Ubuntu 16.04 / CentOS 7 / RHEL 7
+
+Start the services using systemd.
+
+```sh
+sudo systemctl start sensu-backend
+sudo systemctl start sensu-agent
 ```
 
 ## Windows
