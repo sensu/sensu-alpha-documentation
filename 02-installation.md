@@ -8,7 +8,43 @@ The Sensu Backend (sensu-backend) is a single statically linked binary that can 
 
 ## Agent
 
-## Linux - Packages
+The Sensu Agent (sensu-agent) is a single statically linked binary that can be deployed via packages (.deb or .rpm) or Docker image.
+
+## Linux - Package Repositories
+
+### Debian / Ubuntu
+
+Add the Sensu prerelease repository.
+
+```sh
+export SENSU_REPO_TOKEN=your_token_here
+curl -s https://$SENSU_REPO_TOKEN:@packagecloud.io/install/repositories/sensu/prerelease/script.deb.sh | sudo bash
+```
+
+Install the packages from the Sensu prerelease repository.
+
+```sh
+sudo apt-get install sensu-backend sensu-agent
+```
+
+### RHEL / CentOS
+
+Add the Sensu prerelease repository.
+
+```sh
+export SENSU_REPO_TOKEN=your_token_here
+curl -s https://$SENSU_REPO_TOKEN:@packagecloud.io/install/repositories/sensu/prerelease/script.rpm.sh | sudo bash
+```
+
+Install the Sensu backend and agent packages.
+
+```sh
+sudo yum install sensu-backend sensu-agent
+```
+
+## Windows
+
+Coming soon.
 
 ## Docker
 
