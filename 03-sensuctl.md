@@ -30,31 +30,33 @@ sudo mv sensuctl /usr/local/bin/
 
 ### Debian / Ubuntu
 
-Add and update repository.
+Add the Sensu prerelease repository (this step can be skipped if you previously added the repository
+on the backend/agent installation page).
 
 ```sh
-# curl -s https://packagecloud.io/install/repositories/sensu-test/sensu/script.deb.sh.deb | sudo bash
+export SENSU_REPO_TOKEN=your_token_here
+curl -s https://$SENSU_REPO_TOKEN:@packagecloud.io/install/repositories/sensu/prerelease/script.deb.sh | sudo bash
 ```
 
-Install package from Sensu repository.
+Install the Sensu CLI package.
 
 ```sh
-sudo apt-get update
-sudo apt-get install sensuctl
+sudo apt-get install sensu-cli
 ```
 
-### Redhat
+### RHEL / CentOS
 
-Add Sensu repository.
+Add the Sensu prerelease repository (this step can be skipped if you previously added the repository
+on the backend/agent installation page).
 
 ```sh
-curl -s https://packagecloud.io/install/repositories/sensu-test/sensu/script.deb.sh.deb | sudo bash
+export SENSU_REPO_TOKEN=your_token_here
+curl -s https://$SENSU_REPO_TOKEN:@packagecloud.io/install/repositories/sensu/prerelease/script.rpm.sh | sudo bash
 ```
 
-Install package from Sensu repository.
+Install the Sensu CLI package.
 
 ```sh
-sudo yum check-update
 sudo yum install sensu-cli
 ```
 
