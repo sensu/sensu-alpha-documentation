@@ -25,8 +25,6 @@ Install the packages from the Sensu prerelease repository.
 
 ```sh
 sudo apt-get install sensu-backend sensu-agent
-sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
-sudo cp /etc/sensu/agent.yml.example /etc/sensu/agent.yml
 ```
 
 ### RHEL / CentOS
@@ -42,6 +40,15 @@ Install the Sensu backend and agent packages.
 
 ```sh
 sudo yum install sensu-backend sensu-agent
+```
+
+## Linux - Configuration
+
+The example config files list all of the configurable options for each service. Sensu Backend
+requires the `state-dir` option to be set in `/etc/sensu/backend.yml`. Copy the example backend and
+agent config files to the default config paths.
+
+```sh
 sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
 sudo cp /etc/sensu/agent.yml.example /etc/sensu/agent.yml
 ```
