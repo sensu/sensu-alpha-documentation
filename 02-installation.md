@@ -44,8 +44,9 @@ sudo yum install sensu-backend sensu-agent
 
 ## Linux - Configuration
 
-The example config files list all of the configurable options for each service. Copy the example
-backend and agent config files to the default config paths.
+The example config files list all of the configurable options for each service. Sensu Backend
+requires the `state-dir` option to be set in `/etc/sensu/backend.yml`. Copy the example backend and
+agent config files to the default config paths.
 
 ```sh
 sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
