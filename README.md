@@ -1,6 +1,16 @@
 # About Sensu Alpha Documentation
 
-Welcome friends :wave:! This repository is intended primarily for Sensu 2.0 Alpha users to guide them through their initial use. This Alpha program is a small, high-touch collaboration with Sensu Inc's engineering team as they produce a Beta ready for wider use. We appreciate everyone's patience in this early stage. For regular updates, [join our Community Slack](http://slack.sensu.io) or [our mailing list](http://sensuapp.us6.list-manage.com/subscribe?u=576e632588&id=2e5efd43d8).
+Welcome friends :wave:! This repository is intended primarily for
+Sensu 2.0 Alpha users to guide them through their initial use. The
+Alpha Program is a small, high-touch collaboration with Sensu Inc's
+engineering team as they produce a Beta ready for wider use. We
+appreciate everyone's patience in this early stage. For regular
+updates, [join our Community Slack](http://slack.sensu.io) or [our
+mailing
+list](http://sensuapp.us6.list-manage.com/subscribe?u=576e632588&id=2e5efd43d8).
+
+If you are not already a Sensu 2.0 Alpha Program participant, visit
+[sensuapp.org/alpha](https://sensuapp.org/alpha#apply) to apply!
 
 ## Overview
 
