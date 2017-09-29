@@ -98,9 +98,9 @@ We suggest, but do not require, persistent storage for sensu-agents. The Sensu A
 
 2. Start an agent
 
-In this case, we're starting an agent whose ID is the hostname with the webserver and system subscriptions. This assumes that sensu-backend is running on another host named sensu.yourdomain.com. If you are running these locally on the same system, be sure to add `--link sensu-backend` to your Docker arguments and change the backend URL `--backend-url wss://sensu-backend:8081`.
+In this case, we're starting an agent whose ID is the hostname with the webserver and system subscriptions. This assumes that sensu-backend is running on another host named sensu.yourdomain.com. If you are running these locally on the same system, be sure to add `--link sensu-backend` to your Docker arguments and change the backend URL `--backend-url ws://sensu-backend:8081`.
 
-`docker run -v /var/lib/sensu:/var/lib/sensu -d --name sensu-agent sensuapp/sensu-go:2.0-pre sensu-agent start --backend-url wss://sensu.yourdomain.com:8081 --subscriptions webserver,system --cache-dir /var/lib/sensu`
+`docker run -v /var/lib/sensu:/var/lib/sensu -d --name sensu-agent sensuapp/sensu-go:2.0-pre sensu-agent start --backend-url ws://sensu.yourdomain.com:8081 --subscriptions webserver,system --cache-dir /var/lib/sensu`
 
 A note about sensuctl and Docker:
 
