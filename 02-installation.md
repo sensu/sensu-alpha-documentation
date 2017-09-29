@@ -94,7 +94,7 @@ We suggest, but do not require, persistent storage for sensu-agents. The Sensu A
 
 1. Start the sensu-backend process
 
-`docker run -v /var/lib/sensu:/var/lib/sensu -d --name sensu-backend -p 2380:2380 -p 3000:3000 -p 8080:8080 -p 8081:8081 -p 3000:3000 sensuapp/sensu-go:2.0-pre sensu-backend start`
+`docker run -v /var/lib/sensu:/var/lib/sensu -d --name sensu-backend -p 2380:2380 -p 3000:3000 -p 8080:8080 -p 8081:8081 sensuapp/sensu-go:2.0-pre sensu-backend start`
 
 2. Start an agent
 
