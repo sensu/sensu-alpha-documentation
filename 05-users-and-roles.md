@@ -5,7 +5,7 @@
 In Sensu users are a resource that represents a person or thing that has access
 to your system.
 
-### View Users
+### Viewing Users
 
 To view all the users, that your account has access to see.
 
@@ -24,6 +24,9 @@ To view all the users, that your account has access to see.
 You can easily add users through the CLI tool.
 
 <img src="./assets/sensuctl-user-create.gif" alt="create user" width="500px" />
+
+Please note that any role you assign to a user must already exist. Roles can be
+created using the [role create](#managing-roles) subcommand.
 
 Alternatively the CLI tool has a non interactive option as well.
 
