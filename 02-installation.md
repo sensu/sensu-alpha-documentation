@@ -44,13 +44,33 @@ sudo yum install sensu-backend sensu-agent
 
 ## Linux - Configuration
 
-The example config files list all of the configurable options for each service. Sensu Backend
-requires the `state-dir` option to be set in `/etc/sensu/backend.yml`. Copy the example backend and
-agent config files to the default config paths.
+The example config files list all of the configurable options for each service.
+
+#### Sensu Backend
+
+Copy the example backend config file to the default config path.
 
 ```sh
 sudo cp /etc/sensu/backend.yml.example /etc/sensu/backend.yml
+```
+
+The backend config requires `state-dir` to be set. The example config sets `state-dir` to `/var/lib/sensu` by
+default.
+
+#### Sensu Agent
+
+Copy the example agent config file to the default config path.
+
+```sh
 sudo cp /etc/sensu/agent.yml.example /etc/sensu/agent.yml
+```
+
+In order for the agent to function it will need to have a list of one or more backends to point to. This can be set
+by setting `backend-url`.
+
+```yaml
+backend-url:
+  - "ws://127.0.0.1:8081"
 ```
 
 ## Linux - Starting the services
