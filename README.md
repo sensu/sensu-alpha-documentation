@@ -12,6 +12,18 @@ list](http://sensuapp.us6.list-manage.com/subscribe?u=576e632588&id=2e5efd43d8).
 If you are not already a Sensu 2.0 Alpha Program participant, visit
 [sensuapp.org/alpha](https://sensuapp.org/alpha#apply) to apply!
 
+## Alpha Program Goals
+
+The following are the Alpha Program goals.
+
+- Test early Sensu 2.0 prereleases in diverse, real world situations.
+
+- Collect feedback from existing and new Sensu users to help ensure we
+  are taking Sensu in the right direction.
+
+- Produce experienced Sensu 2.0 prerelease users before the Sensu 2.0
+  beta (Q1 of 2018).
+
 ## Overview
 
 Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org). It can be
