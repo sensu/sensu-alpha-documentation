@@ -12,6 +12,28 @@ list](http://sensuapp.us6.list-manage.com/subscribe?u=576e632588&id=2e5efd43d8).
 If you are not already a Sensu 2.0 Alpha Program participant, visit
 [sensuapp.org/alpha](https://sensuapp.org/alpha#apply) to apply!
 
+## Alpha Program Goals
+
+Our hope is that Sensu 2.0 Alpha users will follow along with the documentation
+and attempt to experiment with the functionality that we currently have available.
+Beyond that, we would love further experimentation with those features you are
+particularly interested in. For some examples:
+
+If you have multiple environments, you may like to dig a little deeper into our
+[RBAC](04-rbac-multitenancy.md) functionality. Or if you are interested in
+distributed checks without configuration management, you might take a closer
+look at [Checks and Assets](06-checks-and-assets.md).
+
+We hope that throughout the alpha program we can:
+
+- Test early Sensu 2.0 prereleases in diverse, real world situations.
+
+- Collect feedback from existing and new Sensu users to help ensure we
+  are taking Sensu in the right direction.
+
+- Produce experienced Sensu 2.0 prerelease users before the Sensu 2.0
+  beta (Q1 of 2018).
+
 ## Overview
 
 Sensu 2.0 is a complete rewrite of Sensu in [Go](https://golang.org). It can be
