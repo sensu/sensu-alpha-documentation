@@ -10,7 +10,8 @@ be taken when upgrading.
 
 After upgrading to `2.0.0~alpha7-1`, users will have to
 re-authenticate to the Sensu Backend API. To re-authenticate, users
-must run `sensuctl configure` on their workstations.
+must run `sensuctl configure` and follow the prompts on their
+workstations.
 
 ## Help
 
