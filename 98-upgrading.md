@@ -1,5 +1,11 @@
 # Upgrading
 
+Upgrading the Sensu Alpha is usually a straightforward process. In
+most cases, upgrading the Alpha only requires upgrading to the latest
+package or Docker image. Certain versions of the Alpha may include
+changes that are not backwards compatible and require additional steps
+be taken when upgrading.
+
 ## Upgrading to 2.0.0~alpha7
 
 After upgrading to `2.0.0~alpha7-1`, users will have to
