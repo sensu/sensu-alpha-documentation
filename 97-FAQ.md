@@ -6,6 +6,6 @@ We'd love it if you could write checks as big as your heart desires. However, Et
 
 ```
 const (
-	maxBytesLimit = 512000
+	MaxBytesLimit = 512000
 )
 ```
