@@ -62,7 +62,7 @@ command.
 sensuctl check delete check-disk
 ```
 
-**NOTE:** Due to Etcd performance limitations (see FAQ) and general security features, the maximum http request body size is 512K bytes.
+**NOTE:** Due to Etcd performance limitations (see [FAQ](https://github.com/sensu/sensu-alpha-documentation/blob/master/97-FAQ.md "FAQ")) and general security features, the maximum http request body size is 512K bytes.
 
 ## Assets
 
