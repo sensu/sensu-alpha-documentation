@@ -67,3 +67,4 @@ The first UI we've implemented for Sensu 2.0 is the CLI `sensuctl`. See the
 6. [Checks](06-checks-and-assets.md) - Creating and managing checks and assets
 7. [Getting Help](99-getting-help.md) - How to get help with Sensu 2.0
 8. [Upgrading](98-upgrading.md) - How to upgrade the Sensu Alpha
+9. [CHANGELOG](97-changelog.md) - What changed between Sensu Alpha releases
