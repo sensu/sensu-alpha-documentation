@@ -7,13 +7,13 @@
 Download the latest release.
 
 ```sh
-curl -LO https://storage.googleapis.com/sensu-release/$(curl -s https://storage.googleapis.com/sensu-release/latest.txt)/darwin/amd64/sensuctl
+curl -LO https://storage.googleapis.com/sensu-binaries/$(curl -s https://storage.googleapis.com/sensu-release/latest.txt)/darwin/amd64/sensuctl
 ```
 **Optionally**, if you would like to download a specific release, replace
 `{VERSION}` in the command below.
 
 ```sh
-curl -LO https://storage.googleapis.com/sensu-release/{VERSION}/darwin/amd64/sensuctl
+curl -LO https://storage.googleapis.com/sensu-binaries/{VERSION}/darwin/amd64/sensuctl
 ```
 
 Make the sensuctl binary executable.
