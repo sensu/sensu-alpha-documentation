@@ -194,7 +194,7 @@ Create a silenced entry interactively:
 
 Or with CLI flags:
 ```sh
-sensuctl silenced create webserver-maintenance -e 3600 -c "check-status" -s "webserver" -r "rebooting the world"
+sensuctl silenced create -e 3600 -c "check-status" -s "webserver" -r "rebooting the world"
 ```
 
 You must provide either a check name or subscription name in order to create a 
@@ -203,6 +203,10 @@ To update, delete, or get more info on a silenced entry, you will need to provid
 the ID, which is the combination of the subscription name and the check name in 
 the form `subscription:checkname`.
 
+Silence entries can also operate on specific clients by using the entity id
+_instead_ of the subscription name, in the following
+form:`entity:entity-id:subscription`.
+
 ```sh
 $ sensuctl silenced update webserver:check-status
 ? Expiry in Seconds: 1500
@@ -210,5 +214,16 @@ $ sensuctl silenced update webserver:check-status
 ? Reason: rebooting the world
 ```
 
-Expiry times:
+A silenced entry expiration time will default to -1, meaning the entry will persist 
+in the store unless manually removed. Setting an expiry time will create a TTL
+on the entry so that it is deleted when the TTL runs out. To remove an entry
+manually, you must provide the silenced entry ID.
 
+> sensuctl silenced delete webserver:check-status
+```sh
+Are you sure you would like to delete resource 'webserver:check-status'?
+
+Enter 'WEBSERVER:CHECK-STATUS' to confirm.
+> WEBSERVER:CHECK-STATUS
+OK
+```
