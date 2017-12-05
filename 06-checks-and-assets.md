@@ -203,10 +203,6 @@ To update, delete, or get more info on a silenced entry, you will need to provid
 the ID, which is the combination of the subscription name and the check name in 
 the form `subscription:checkname`.
 
-Silence entries can also operate on specific clients by using the entity id
-_instead_ of the subscription name, in the following
-form:`entity:entity-id:subscription`.
-
 ```sh
 $ sensuctl silenced update webserver:check-status
 ? Expiry in Seconds: 1500
