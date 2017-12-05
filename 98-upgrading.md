@@ -12,7 +12,7 @@ package cache (e.g. `sudo apt-get update`), and then following the
 
 ## Upgrading to 2.0.0~alpha8
 
-There was a breaking change made to the Environmet type in Sensu
+There was a breaking change made to the Environment type in Sensu
 2.0.0~alpha8 that will require an offline database migration prior to
 starting the upgraded binaries. Please follow these steps:
 
