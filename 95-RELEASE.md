@@ -31,7 +31,7 @@ will cause the Sensu Agent to pass in the event via STDIN to your check at runti
 
 ### Manual event creation and resolution
 
-Events can now be manually created and manually via the API or sensuctl. For more 
+Events can now be manually created and resolved via the API or sensuctl. For more 
 information on interacting with events in Sensu 2.x, see visit our events documentation.
 
 ### Proxy Entities
