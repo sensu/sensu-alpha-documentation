@@ -18,7 +18,6 @@ to a simple specification.
     - 1 indicates “WARNING”
     - 2 indicates “CRITICAL”
     - exit status codes other than 0, 1, or 2 indicate an “UNKNOWN” or custom status
-
 ### Viewing
 
 To view all the checks that are currently configured for the cluster, enter:
@@ -38,6 +37,9 @@ Command:        check-http.rb -u https://dean-learner.book
 Subscriptions:  web
 Handlers:       slack
 Runtime Assets: ruby42
+Publish?:       true
+Stdin?:         true
+Source:
 Organization:   default
 Environment:    default
 ```
@@ -61,6 +63,9 @@ command.
 ```sh
 sensuctl check delete check-disk
 ```
+
+**STDIN** - set this to true when creating a check interactively, or by passing
+--stdin to tell the agent to pass the event to your check via STDIN at runtime. 
 
 **NOTE:** Due to Etcd performance limitations (see [FAQ](https://github.com/sensu/sensu-alpha-documentation/blob/master/97-FAQ.md "FAQ")) and general security features, the maximum http request body size is 512K bytes.
 
