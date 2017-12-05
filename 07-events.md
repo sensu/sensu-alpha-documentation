@@ -41,6 +41,7 @@ In Sensu 1.x, we offer manual event resolution through the POST /resolve endpoin
 If you want to use sensuctl to manually resolve an event, you can use the `resolve` subcommand which will resolve the output and set the status to 0.
 
 > sensuctl event resolve apollo-11 moon-landing
+
 > sensuctl event info apollo-11 moon-landing
 ```sh
 Entity:    apollo-11
@@ -48,5 +49,5 @@ Check:     moon-landing
 Output:    Resolved Manually by sensuctl
 Status:    0
 History:   0,1,0,1,0
-Timestamp: 1969-07-20 14:07:26 -0600 CST
+Timestamp: 1969-07-20 14:10:32 -0600 CST
 ```
