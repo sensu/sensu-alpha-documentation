@@ -2,7 +2,7 @@
 
 ## Events
 
-Sensu events are created to acknowledge that something potentially noteworthy has occurred. Events may be processed by one or more event handlers to do things such as send an email, or invoke an automated action. Every Sensu event provides context, called “event data”, which contains information about the originating Sensu client and the corresponding check result.
+Sensu events are created to acknowledge that a check result has been received. Potentially noteworthy events may be processed by one or more event handlers to do things such as send an email, or invoke an automated action. Every Sensu event provides context, called “event data”, which contains information about the originating Sensu client and the corresponding check result.
 
 ### How are Sensu events created?
 
