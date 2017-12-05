@@ -6,9 +6,16 @@ package or Docker image. Certain versions of the Alpha may include
 changes that are not backwards compatible and require additional steps
 be taken when upgrading.
 
+Typically, all that is required is updating your operating system's
+package cache (e.g. `sudo apt-get update`), and then following the
+[installation instructions](02-installation.md). 
+
+Note: you do not have to add the Sensu Alpha package repositories a 
+second time.
+
 ## Upgrading to 2.0.0~alpha8
 
-There was a breaking change made to the Environmet type in Sensu
+There was a breaking change made to the Environment type in Sensu
 2.0.0~alpha8 that will require an offline database migration prior to
 starting the upgraded binaries. Please follow these steps:
 
