@@ -12,7 +12,7 @@ services:
       - "8081:8081"
   sensu-agent1:
     image: sensuapp/sensu-go
-    command: "sensu-agent start --backendUrl wss://backend:8081 --id agent1"
+    command: "sensu-agent start --backend-url wss://backend:8081 --id agent1"
     hostname: agent1
     restart: always
     links:
