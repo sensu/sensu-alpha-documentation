@@ -164,7 +164,6 @@ sensuctl create check check-my-website --command "curl http://something" --runti
 ```
 
 ### Silencing
-TODO: basic description of how silenced entries work
 
 Silenced entries are used to supress event handler execution, effectively muting
 notifications for an event. Check events can be silenced by subscription, check
@@ -211,6 +210,5 @@ $ sensuctl silenced update webserver:check-status
 ? Reason: rebooting the world
 ```
 
-TODO: show some examples of silenced expiration
 Expiry times:
 
