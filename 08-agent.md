@@ -1,7 +1,7 @@
 # Agent
 
 ## API
-The Sensu agent api default host/port configuration is 127.0.0.1/3031.
+The Sensu agent api default host/port configuration is 127.0.0.1:3031.
 
 ### Healthz
 
