@@ -162,3 +162,53 @@ sensuctl asset create curl/linux --url "http://acme.s3.amazonaws.com/curl-7-linu
 sensuctl asset create curl/macos --url "http://acme.s3.amazonaws.com/curl-7-macos.tar" --sha512 XXX --filter "System.OS=='macos'" --filter "System.Arch == 'amd64'"
 sensuctl create check check-my-website --command "curl http://something" --runtime-asset curl # by using prefix captures both assets
 ```
+
+### Silencing
+
+Silenced entries are used to supress event handler execution, effectively muting
+notifications for an event. Check events can be silenced by subscription, check
+name, or combination of the two. 
+
+## Viewing
+
+To view all current silenced entries, enter:
+
+```sh
+sensuctl silenced list
+```
+
+### Managing Silenced Entries
+
+Create a silenced entry interactively:
+
+> sensuctl silenced create
+```sh
+? Organization: default
+? Environment: default
+? Subscription: webserver
+? Check: check-status
+? Expiry in Seconds: 3600
+? Expire on Resolve: No
+? Reason: "rebooting the world"
+```
+
+Or with CLI flags:
+```sh
+sensuctl silenced create webserver-maintenance -e 3600 -c "check-status" -s "webserver" -r "rebooting the world"
+```
+
+You must provide either a check name or subscription name in order to create a 
+silenced entry. If either value is not provided, it is substituted with a wildcard. 
+To update, delete, or get more info on a silenced entry, you will need to provide 
+the ID, which is the combination of the subscription name and the check name in 
+the form `subscription:checkname`.
+
+```sh
+$ sensuctl silenced update webserver:check-status
+? Expiry in Seconds: 1500
+? Expire on Resolve: No
+? Reason: rebooting the world
+```
+
+Expiry times:
+
