@@ -8,7 +8,10 @@ be taken when upgrading.
 
 Typically, all that is required is updating your operating system's
 package cache (e.g. `sudo apt-get update`), and then following the
-[installation instructions](02-installation.md).
+[installation instructions](02-installation.md). 
+
+Note: you do not have to add the Sensu Alpha package repositories a 
+second time.
 
 ## Upgrading to 2.0.0~alpha8
 
