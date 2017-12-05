@@ -38,7 +38,7 @@ Timestamp: 1969-07-20 14:07:26 -0600 CST
 
 In Sensu 1.x, we offer manual event resolution through the POST /resolve endpoint. In Sensu 2.x, POST /events can do that and more!
 
-If you want to use sensuctl to manually resolve an event, you can use the `resolve` subcommand which will resolve the output and set the status to 0.
+If you want to use sensuctl to manually resolve an event, the `resolve` subcommand will resolve the output and set the status to 0.
 
 > sensuctl event resolve apollo-11 moon-landing
 
