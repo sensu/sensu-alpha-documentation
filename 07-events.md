@@ -10,9 +10,9 @@ A Sensu Event is created every time a check result is processed by the Sensu ser
 
 ### Event actions
 
-- create. Indicates a check result status change from zero to non-zero.
-- resolve. Indicates a check result status change from a non-zero to zero.
-- flapping. Indicates a rapid change in check result status.
+- **create:** Indicates a check result status change from zero to non-zero.
+- **resolve:**. Indicates a check result status change from a non-zero to zero.
+- **flapping:**. Indicates a rapid change in check result status.
 
 ### Viewing
 
