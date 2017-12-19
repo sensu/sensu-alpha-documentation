@@ -60,13 +60,13 @@ The first UI we've implemented for Sensu 2.0 is the CLI `sensuctl`. See the
 ## More Documentation
 
 1. [What's different?](01-whats-new.md) - What's different in Sensu 2.0?
-2. [Installation](02-installation.md) - Installing and Configuring Sensu 2.0
-3. [CLI](03-sensuctl.md) An overview of the Sensu CLI utility - sensuctl
-4. [RBAC](04-rbac-multitenancy.md) - An overview of Sensu RBAC and Multitenancy
-5. [Users](05-users-and-roles.md) - Creating and managing users and roles
-6. [Checks](06-checks-and-assets.md) - Creating and managing checks and assets
-7. [Events](07-events.md) - An overview of events in Sensu
-8. [Hooks](08-hooks.md) - Creating and managing hooks (with checks, mutators, and handlers)
-9. [Getting Help](99-getting-help.md) - How to get help with Sensu 2.0
-10. [Upgrading](98-upgrading.md) - How to upgrade the Sensu Alpha
-11. [CHANGELOG](97-changelog.md) - What changed between Sensu Alpha releases
+1. [Installation](02-installation.md) - Installing and Configuring Sensu 2.0
+1. [CLI](03-sensuctl.md) An overview of the Sensu CLI utility - sensuctl
+1. [RBAC](04-rbac-multitenancy.md) - An overview of Sensu RBAC and Multitenancy
+1. [Users](05-users-and-roles.md) - Creating and managing users and roles
+1. [Checks](06-checks-and-assets.md) - Creating and managing checks and assets
+1. [Events](07-events.md) - An overview of events in Sensu
+1. [Hooks](08-hooks.md) - Creating and managing hooks (with checks, mutators, and handlers)
+1. [Getting Help](99-getting-help.md) - How to get help with Sensu 2.0
+1. [Upgrading](98-upgrading.md) - How to upgrade the Sensu Alpha
+1. [CHANGELOG](97-changelog.md) - What changed between Sensu Alpha releases
