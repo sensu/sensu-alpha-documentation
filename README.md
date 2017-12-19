@@ -66,6 +66,7 @@ The first UI we've implemented for Sensu 2.0 is the CLI `sensuctl`. See the
 5. [Users](05-users-and-roles.md) - Creating and managing users and roles
 6. [Checks](06-checks-and-assets.md) - Creating and managing checks and assets
 7. [Events](07-events.md) - An overview of events in Sensu
-8. [Getting Help](99-getting-help.md) - How to get help with Sensu 2.0
-9. [Upgrading](98-upgrading.md) - How to upgrade the Sensu Alpha
-10. [CHANGELOG](97-changelog.md) - What changed between Sensu Alpha releases
+8. [Hooks](08-hooks.md) - Creating and managing hooks (with checks, mutators, and handlers)
+9. [Getting Help](99-getting-help.md) - How to get help with Sensu 2.0
+10. [Upgrading](98-upgrading.md) - How to upgrade the Sensu Alpha
+11. [CHANGELOG](97-changelog.md) - What changed between Sensu Alpha releases
