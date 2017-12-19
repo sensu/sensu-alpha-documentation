@@ -7,6 +7,30 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## [2.0.0-alpha.11] - 2017-12-19
+### Breaking Changes
+- The `Source` field on a check has been renamed to `ProxyEntityID`. Any checks
+  using the Source field will have to be recreated.
+
+### Added
+- Silenced entries with ExpireOnResolve set to true will now be deleted when an
+event which has previously failing was resolved
+- TCP/UDP sockets now accept 1.x backward compatible payloads. 1.x Check Result gets translated to a 2.x Event.
+- Custom attributes can be added to the agent at start.
+- New and improved Check Hooks are implemented (see whats new about hooks here: [Hooks](https://github.com/sensu/sensu-alpha-documentation/blob/master/08-hooks.md))
+
+### Changed
+- Avoid using reflection in time.InWindows function.
+- Use multiple parallel jobs in CI tools to speed up the tests
+- Pulled in latest [github.com/coreos/etcd](https://github.com/coreos/etcd).
+  - Includes fix for panic that occurred on shutdown.
+  - Refer to their
+    [changelog](https://github.com/gyuho/etcd/blob/f444abaae344e562fc69323c75e1cf772c436543/CHANGELOG.md)
+    for more.
+- Switch to using [github.com/golang/dep](https://github.com/golang/dep) for
+  managing dependencies; `vendor/` directory has been removed.
+  - See [README](README.md) for usage.
+
 ## [2.0.0-alpha.10] - 2017-12-12
 ### Added
 - End-to-end test for the silencing functionality
