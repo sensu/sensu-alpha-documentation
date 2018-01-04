@@ -33,6 +33,7 @@ If you want more details on a check, the `info` subcommand can help you out.
 === marketing-site
 Name:           check-http
 Interval:       10
+Cron:           0 30 \* \* \* \*
 Command:        check-http.rb -u https://dean-learner.book
 Subscriptions:  web
 Handlers:       slack
@@ -64,7 +65,9 @@ command.
 sensuctl check delete check-disk
 ```
 
-**STDIN** - set this to true when creating a check interactively, or by passing
+**SCHEDULING:** A check can be scheduled according to an interval integer (in seconds) or a cron string (see [GoDoc Cron](https://godoc.org/github.com/robfig/cron)). In the presence of both, the cron schedule will take precedence over the interval schedule. In addition to traditional [Cron](https://en.wikipedia.org/wiki/Cron) strings, Go also accepts many forms of human readable strings for the cron schedule, ex. `@midnight`, `@daily`, and `@every 1h30m`. Please feel free to use these human readable strings, with one caveat. If the schedule can be described using either the interval or cron field, ex. `interval: 10` or `cron: @every 10s`, we suggest you default to the interval. This is because Sensu splays interval schedules to ensure a distributed load of checks.
+
+**STDIN:** set this to true when creating a check interactively, or by passing
 --stdin to tell the agent to pass the event to your check via STDIN at runtime. 
 
 **NOTE:** Due to Etcd performance limitations (see [FAQ](https://github.com/sensu/sensu-alpha-documentation/blob/master/97-FAQ.md "FAQ")) and general security features, the maximum http request body size is 512K bytes.
