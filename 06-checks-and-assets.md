@@ -18,6 +18,7 @@ to a simple specification.
     - 1 indicates “WARNING”
     - 2 indicates “CRITICAL”
     - exit status codes other than 0, 1, or 2 indicate an “UNKNOWN” or custom status
+
 ### Viewing
 
 To view all the checks that are currently configured for the cluster, enter:
@@ -55,7 +56,7 @@ Checks can be configured both interactively:
 
 ```sh
 sensuctl check create check-disk -c "./check-disk.sh" --handlers slack -i 5 --subscriptions unix
-ensuctl check create check-nginx -c "./nginx-status.sh" --handlers pagerduty,slack -i 15 --subscriptions unix,www
+sensuctl check create check-nginx -c "./nginx-status.sh" --handlers pagerduty,slack -i 15 --subscriptions unix,www
 ```
 
 To delete an existing check, simply pass the name of the check to the `delete`
@@ -65,12 +66,27 @@ command.
 sensuctl check delete check-disk
 ```
 
-**SCHEDULING:** A check can be scheduled according to an interval integer (in seconds) or a cron string (see [GoDoc Cron](https://godoc.org/github.com/robfig/cron)). In the presence of both, the cron schedule will take precedence over the interval schedule. In addition to traditional [Cron](https://en.wikipedia.org/wiki/Cron) strings, Go also accepts many forms of human readable strings for the cron schedule, ex. `@midnight`, `@daily`, and `@every 1h30m`. Please feel free to use these human readable strings, with one caveat. If the schedule can be described using either the interval or cron field, ex. `interval: 10` or `cron: @every 10s`, we suggest you default to the interval. This is because Sensu splays interval schedules to ensure a distributed load of checks.
+### Scheduling
 
-**STDIN:** set this to true when creating a check interactively, or by passing
---stdin to tell the agent to pass the event to your check via STDIN at runtime. 
+A check can be scheduled according to an interval integer (in seconds) or a cron
+string (see [GoDoc Cron](https://godoc.org/github.com/robfig/cron)). In the
+presence of both, the cron schedule will take precedence over the interval
+schedule. In addition to traditional [Cron](https://en.wikipedia.org/wiki/Cron)
+strings, Go also accepts many forms of human readable strings for the cron
+schedule, ex. `@midnight`, `@daily`, and `@every 1h30m`. Please feel free to use
+these human readable strings, with one caveat. If the schedule can be described
+using either the interval or cron field, ex. `interval: 10` or `cron: @every
+10s`, we suggest you default to the interval. This is because Sensu splays
+interval schedules to ensure a distributed load of checks.
 
-**NOTE:** Due to Etcd performance limitations (see [FAQ](https://github.com/sensu/sensu-alpha-documentation/blob/master/97-FAQ.md "FAQ")) and general security features, the maximum http request body size is 512K bytes.
+### STDIN
+Set this attribute to true when creating a check interactively, or by passing
+--stdin to tell the agent to pass the event to your check via STDIN at runtime.
+
+**NOTE:** Due to Etcd performance limitations (see
+[FAQ](https://github.com/sensu/sensu-alpha-documentation/blob/master/97-FAQ.md
+"FAQ")) and general security features, the maximum http request body size is
+512K bytes.
 
 ## Assets
 
@@ -175,7 +191,7 @@ sensuctl create check check-my-website --command "curl http://something" --runti
 
 Silenced entries are used to supress event handler execution, effectively muting
 notifications for an event. Check events can be silenced by subscription, check
-name, or combination of the two. 
+name, or combination of the two.
 
 ## Viewing
 
@@ -205,10 +221,10 @@ Or with CLI flags:
 sensuctl silenced create -e 3600 -c "check-status" -s "webserver" -r "rebooting the world"
 ```
 
-You must provide either a check name or subscription name in order to create a 
-silenced entry. If either value is not provided, it is substituted with a wildcard. 
-To update, delete, or get more info on a silenced entry, you will need to provide 
-the ID, which is the combination of the subscription name and the check name in 
+You must provide either a check name or subscription name in order to create a
+silenced entry. If either value is not provided, it is substituted with a wildcard.
+To update, delete, or get more info on a silenced entry, you will need to provide
+the ID, which is the combination of the subscription name and the check name in
 the form `subscription:checkname`.
 
 ```sh
@@ -218,7 +234,7 @@ $ sensuctl silenced update webserver:check-status
 ? Reason: rebooting the world
 ```
 
-A silenced entry expiration time will default to -1, meaning the entry will persist 
+A silenced entry expiration time will default to -1, meaning the entry will persist
 in the store unless manually removed. Setting an expiry time will create a TTL
 on the entry so that it is deleted when the TTL runs out. To remove an entry
 manually, you must provide the silenced entry ID.
