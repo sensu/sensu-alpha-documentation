@@ -88,6 +88,77 @@ Set this attribute to true when creating a check interactively, or by passing
 "FAQ")) and general security features, the maximum http request body size is
 512K bytes.
 
+### Subdue
+
+Check subdue provides the ability to only publish check requests during one or
+more time windows.
+
+A check subdue is represented by a hash of days of the week, or `all`, and each
+day must define one or more time windows in which the check is not scheduled to
+be executed:
+
+```json
+{
+  "days": {
+    "all": [
+      {
+        "begin": "5:00 PM",
+        "end": "8:00 AM"
+      }
+    ],
+    "friday": [
+      {
+        "begin": "12:00 PM",
+        "end": "5:00 PM"
+      }
+    ]
+  }
+}
+```
+
+It can be added through `sensuctl` using a file:
+
+```sh
+sensuctl check subdue check_echo -f subdue.json
+```
+
+Or via STDIN:
+
+```json
+cat <<EOF | sensuctl check subdue check_echo
+{
+  "days": {
+    "friday": [
+      {
+        "begin": "12:00 PM",
+        "end": "5:00 PM"
+      }
+    ]
+  }
+}
+EOF
+```
+
+#### Timezones
+
+By default, all specified times are assumed to be **UTC**. An optional timezone
+abbreviation (using [RFC822](https://www.w3.org/Protocols/rfc822/#z28) format or
+[IANA Time Zone database](https://www.iana.org/time-zones) format) can be
+specified:
+
+```json
+{
+  "days": {
+    "all": [
+      {
+        "begin": "5:00PM MST",
+        "end": "7:00PM MST"
+        }
+    ]
+  }
+}
+```
+
 ## Assets
 
 Assets are a way to provide your checks with runtime dependencies they require
