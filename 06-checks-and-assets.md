@@ -159,6 +159,50 @@ specified:
 }
 ```
 
+### Token Substitution
+
+#### What is Check Token Substitution?
+
+Sensu check may include attributes that you may wish to override on
+a entity-by-entity basis. For example, check commands – which may include
+command line arguments for controlling the behavior of the check command – may
+benefit from entity-specific thresholds, etc. Sensu check tokens are check
+placeholders that will be replaced by the Sensu agent with the corresponding
+entity attribute values (including custom attributes).
+
+**NOTE**: Check tokens are processed before check execution, therefore token
+substitution will not apply to check data delivered via the local agent socket
+input.
+
+#### Token Substitution Syntax
+
+Check tokens are invoked by wrapping references to the entity attributes with
+the [Go Template](https://golang.org/pkg/text/template/) format.
+
+- `{{ .ID }}` would be replaced with the entity `ID` attributes
+- `{{ .URL }}` would be replaced with a custom attribute called `URL`
+- `{{ .Disk.Warning }}` would be replaced with a custom attribute called
+`Warning` nested inside of a JSON hash called `Disk`
+
+#### Token Substitution Default Values
+
+Check token default values can be used as a fallback in the event that an
+attribute is not provided by the entity. Check token default values are
+specified with the `default` function, and can be used to provide a “fallback
+value” for entities that are missing the declared token attribute.
+
+- `{{ .URL | default "https://sensuapp.org" }}` would be replaced with a custom
+ attribute called `URL`. If no such attribute called is included in the entity,
+ the default (or fallback) value of https://sensuapp.org will be used.
+
+#### Unmatched Tokens
+
+If a token substitution default value is not provided (i.e. as a fallback
+value), and the Sensu entity does not have a matching attribute, a check result
+indicating “unmatched token” will be published for the check execution (e.g.:
+`"unmatched token: [...] at <.Disk.Warning>: map has no entry for key
+"Disk""`).
+
 ## Assets
 
 Assets are a way to provide your checks with runtime dependencies they require
