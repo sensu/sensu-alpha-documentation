@@ -71,13 +71,8 @@ sensuctl check delete check-disk
 A check can be scheduled according to an interval integer (in seconds) or a cron
 string (see [GoDoc Cron](https://godoc.org/github.com/robfig/cron)). In the
 presence of both, the cron schedule will take precedence over the interval
-schedule. In addition to traditional [Cron](https://en.wikipedia.org/wiki/Cron)
-strings, Go also accepts many forms of human readable strings for the cron
-schedule, ex. `@midnight`, `@daily`, and `@every 1h30m`. Please feel free to use
-these human readable strings, with one caveat. If the schedule can be described
-using either the interval or cron field, ex. `interval: 10` or `cron: @every
-10s`, we suggest you default to the interval. This is because Sensu splays
-interval schedules to ensure a distributed load of checks.
+schedule. Sensu accepts [Traditional Cron](https://en.wikipedia.org/wiki/Cron)
+strings, only.
 
 ### STDIN
 Set this attribute to true when creating a check interactively, or by passing
