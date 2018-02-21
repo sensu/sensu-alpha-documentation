@@ -108,6 +108,10 @@ The backend requires 3 exposed ports and persistent storage. This example uses a
 
 We suggest, but do not require, persistent storage for sensu-agents. The Sensu Agent will cache runtime assets locally for each check (see [Checks and Assets](06-checks-and-assets.md) for more details). This storage should be unique per sensu-agent process.
 
+### Dashboards and Visualizations
+
+Currently Uchiwa is not yet supported but it is under active development, with a release currently planned for late 2018.
+
 ### How To
 
 1. Start the sensu-backend process
