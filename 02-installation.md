@@ -82,7 +82,7 @@ sudo /etc/init.d/sensu-backend start
 sudo /etc/init.d/sensu-agent start
 ```
 
-#### Ubuntu 16.04 / CentOS 7 / RHEL 7
+#### Ubuntu 16.04 / Debian Stretch / CentOS 7 / RHEL 7
 
 Start the services using systemd.
 
