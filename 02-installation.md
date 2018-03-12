@@ -110,7 +110,7 @@ We suggest, but do not require, persistent storage for sensu-agents. The Sensu A
 
 ### Dashboards and Visualizations
 
-Currently Uchiwa is not yet supported but it is under active development.
+Currently Uchiwa is not yet supported, but a new dashboard is under active development.
 
 ### How To
 
