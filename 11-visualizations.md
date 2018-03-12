@@ -2,4 +2,4 @@
 
 ## Uchiwa
 
-Currently Uchiwa is not supported but it is under active development.
+Currently Uchiwa is not supported, but a new dashboard is under active development.
